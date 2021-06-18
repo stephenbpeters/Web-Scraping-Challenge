@@ -31,6 +31,54 @@
       </div>
     </div>
 
+    <div class="row" id="phone-m_data">
+      <div class="col-md-12">
+        <h2>info table</h2>
+        <p>
+        {{ m_data.planets|safe }}
+      </p>
+      </div>
+    </div>
+
+    <div class="row" id="phone-m_data">
+      <div class="col-md-12">
+        <h2>hemisphere #1</h2>
+        <p>
+        {{ m_data.hemis[0]['title'] }}<br>
+        <img src="{{ m_data.hemis[0]['img_url'] }}">
+      </p>
+      </div>
+    </div>
+
+    <div class="row" id="phone-m_data">
+      <div class="col-md-12">
+        <h2>hemisphere #2</h2>
+        <p>
+        {{ m_data.hemis[1]['title'] }}<br>
+        <img src="{{ m_data.hemis[1]['img_url'] }}">
+      </p>
+      </div>
+    </div>
+
+    <div class="row" id="phone-m_data">
+      <div class="col-md-12">
+        <h2>hemisphere #3</h2>
+        <p>
+        {{ m_data.hemis[2]['title'] }}<br>
+        <img src="{{ m_data.hemis[2]['img_url'] }}">
+      </p>
+      </div>
+    </div>
+    <div class="row" id="phone-m_data">
+      <div class="col-md-12">
+        <h2>hemisphere #4</h2>
+        <p>
+        {{ m_data.hemis[3]['title'] }}<br>
+        <img src="{{ m_data.hemis[3]['img_url'] }}">
+      </p>
+      </div>
+    </div>
+
   </div>
 </body>
 

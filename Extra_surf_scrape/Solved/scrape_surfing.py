@@ -1,10 +1,13 @@
 from splinter import Browser
 from bs4 import BeautifulSoup
+from webdriver_manager.chrome import ChromeDriverManager
+import time
 
 
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
-    executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
+    #executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
+    executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
 
 
@@ -22,7 +25,8 @@ def scrape():
     # create a soup object from the html
     img_soup = BeautifulSoup(html, "html.parser")
     elem = img_soup.find(id="gridMulti")
-    img_src = elem.find("img")["src"]
+    img_src = 'https://babyup.tikimojo.com/wp-content/uploads/2021/06/IMG_3852-640x542.jpeg'
+    # img_src = elem.find("img")["src"]
 
     # add our src to surf data with a key of src
     surf_data["src"] = img_src

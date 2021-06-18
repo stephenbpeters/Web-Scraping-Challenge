@@ -5,26 +5,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Surfing</title>
+  <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div clas="container">
+  <div clas="container" style="
+  padding-left: 20px;
+  padding-right: 20px;">
     <div class="jumbotron text-center">
-      <h1>Mars, a nice place for lunch</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Surfing Reports</a></p>
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
-      
-    <!-- surf data -->
+
     <div class="row">
+      <div class="col-md-12">
+        <h1>Latest Mars News</h1>
+        <h3>Article Title</h3>
+        <p>So, to create the layout you want, create a container  Then, add the desired number of columns
+           (tags with appropriate .col-*-* classes). Note that numbers in .col-*-* should always add up to 
+           12 for each row.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Featured mars Image</h1>
+        <img src="https://babyup.tikimojo.com/wp-content/uploads/2021/06/bunnies-640x472.png">
+      </div>
+      <div class="col-md-6">
+        <img src="https://babyup.tikimojo.com/wp-content/uploads/2021/06/IMG_3841-640x508.jpeg">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1><center>Mars Hemispheres</center></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card" style="width: 300px;">
+          <img class="card-img-top" width="200" src="https://babyup.tikimojo.com/wp-content/uploads/2021/06/IMG_3852-640x542.jpeg" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text"><center>hemisphere 1</center></p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 300px;">
+          <img class="card-img-top" width="200" src="https://babyup.tikimojo.com/wp-content/uploads/2021/06/IMG_3852-640x542.jpeg" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text"><center>hemisphere 2</center></p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 300px;">
+          <img class="card-img-top" width="200" src="https://babyup.tikimojo.com/wp-content/uploads/2021/06/IMG_3852-640x542.jpeg" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text"><center>hemisphere 3</center></p>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 300px;">
+          <img class="card-img-top" width="200" src="https://babyup.tikimojo.com/wp-content/uploads/2021/06/IMG_3852-640x542.jpeg" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text"><center>hemisphere 4</center></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- surf data -->
+    <!-- <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <img src= {{ surfing.src }} width: 50% />
         <h3>info about mars</h3>
         <p>{{ surfing.report }}</p>
       </div>
-    </div>
+    </div> -->
   </div>
+  <footer class="footer" style="
+  margin-top: 20px;
+  margin-bottom: 20px;">
+    <div class="container">
+      <center><span class="text-muted">Thanks for visiting</span></center>
+    </div>
+  </footer>
 
 </body>
 </html>

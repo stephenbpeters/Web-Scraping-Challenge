@@ -1,6 +1,7 @@
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import time
+import pandas as pd
 from webdriver_manager.chrome import ChromeDriverManager
 
 
@@ -42,6 +43,43 @@ def scrape():
     featured_image_url = url + relative_image
 
     m_data['featured_image'] = featured_image_url
+
+# Scrape third page into Soup  
+    url = 'https://galaxyfacts-mars.com'
+    tables = pd.read_html(url)
+    mars_info = tables[0]
+    mars_html = mars_info.to_html()
+
+    m_data['planets'] = mars_html
+
+# Scrape fourth page into Soup  
+    url = "https://marshemispheres.com/"
+    browser.visit(url)
+    time.sleep(1)
+
+    html = browser.html
+    soup = bs(html, 'html.parser')
+    hemis = soup.find_all('div', class_="item")
+    hemisphere_image_urls = []
+
+    for hemi in hemis:
+        h3 = hemi.find('h3')
+        name = hemi.find('h3').text
+        name_short = name.replace(' Enhanced', '')
+        link = hemi.find('a')
+        href = link['href']
+        newUrl = 'http://marshemispheres.com/' + href
+        # go to the sub page
+        browser.visit(newUrl)
+        time.sleep(1)
+        html_sub = browser.html
+        soup_sub = bs(html_sub, 'html.parser')
+        big_image = soup_sub.find('img', class_='wide-image')
+        img_url = url + big_image['src']
+        dict = { 'title': name_short, 'img_url': img_url }
+        hemisphere_image_urls.append(dict)
+
+    m_data['hemis'] = hemisphere_image_urls    
 
     # Quit the browser
     browser.quit()
