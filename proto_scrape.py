@@ -48,9 +48,10 @@ def scrape():
     url = 'https://galaxyfacts-mars.com'
     tables = pd.read_html(url)
     mars_info = tables[0]
-    mars_html = mars_info.to_html()
+    mars_info.rename(columns = {0: 'Stats', 1: 'Red Planet', 2: 'Our Planet'}, inplace=True)
+    web = mars_info.to_html(index=False, classes='table-striped')
 
-    m_data['planets'] = mars_html
+    m_data['planets'] = web
 
 # Scrape fourth page into Soup  
     url = "https://marshemispheres.com/"
