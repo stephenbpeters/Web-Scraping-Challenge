@@ -1,14 +1,26 @@
 # Web Scraping Challenge
 Python homework
 
-homework submitted on 6/18/2021 by Stephen Peters
+Data Analytics Bootcamp homework submitted on 6/18/2021 by Stephen Peters
 
-Written in Python, focusing on the use of API's.
+Written in Python this project scrapes four different web sites, saves the information collected in a Mongo database and then renders it in an attractive web page.
 
-The homework files can be found inside the WeatherPy and VacationPy directories.
+Required:
+* Python
+* Google Chrome 
 
-Simple conclusions based on analysis of the data can be found in the Jupyter notebooks.
+Libraries required:
+* Splinter
+* BeautifulSoup
+* Time
+* Pandas
+* Webdriver_manager.chrome
+* Flask
+* Flask_PyMongo
 
-The output from the WeatherPy assignment can be found in that directory under "output_data".
-
-In order to execute the Jupyter Notebooks the user will need to enter their API keys into the "api_keys.py" files.
+To run this project:
+* In the shell execute "python proto_app.py"
+* Once the script is executing, point your web browser to: http://localhost:5000
+* To gather the latest news about Mars, please click the "Scrape The Web About Mars" button at the top
+* Any time you'd like the latest Mars news, click the button again
+* Enjoy!
