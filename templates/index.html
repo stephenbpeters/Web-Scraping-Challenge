@@ -9,16 +9,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <style>
     td {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    padding-left: 10px; }
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
     th {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    padding-left: 5px; 
-    text-decoration: underline; }
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 5px;
+      padding-left: 5px;
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -43,55 +46,34 @@
         <h4>Latest Featured Image:</h4>
         <img src="{{m_data.featured_image}}" width="400px">
       </div>
-<!-- info table -->
+      <!-- info table -->
       <div class="col-md-6">
         <h2>Compare Planets</h2>
         <p>
-        {{ m_data.planets|safe }}
-      </p>
+          {{ m_data.planets|safe }}
+        </p>
       </div>
     </div>
-<!-- adding hemis -->    
-<div class="row" id="phone-m_data">
-  <div class="col-md-12">
-    <h3>Hemisphere Views of Mars:</h3>
-  </div>
-</div>
-  <div class="row" style="margin-top: 20px">
-    <div class="col-md-3">
-      <div class="card" style="width: 300px;">
-        <img class="card-img-top" width="200" src="{{ m_data.hemis[0]['img_url'] }}" alt="Card image cap">
+    <!-- adding hemis -->
+    <div class="row" id="phone-m_data">
+      <div class="col-md-12">
+        <h3>Hemisphere Views of Mars:</h3>
+      </div>
+    </div>
+    {% for hemi in m_data.hemis %}
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card" style="width: 300px;">
+          <img class="card-img-top" width="200" src="{{ hemi.img_url }}" alt="Card image cap">
           <div class="card-body">
-          <p class="card-text">{{ m_data.hemis[0]['title'] }}</p>
+            <p class="card-text">{{ hemi.title }}</p>
           </div>
+        </div>
       </div>
+      {% endfor %}
+
+
     </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 300px;">
-        <img class="card-img-top" width="200" src="{{ m_data.hemis[1]['img_url'] }}" alt="Card image cap">
-          <div class="card-body">
-          <p class="card-text">{{ m_data.hemis[1]['title'] }}</p>
-          </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 300px;">
-        <img class="card-img-top" width="200" src="{{ m_data.hemis[2]['img_url'] }}" alt="Card image cap">
-          <div class="card-body">
-          <p class="card-text">{{ m_data.hemis[2]['title'] }}</p>
-          </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 300px;">
-        <img class="card-img-top" width="200" src="{{ m_data.hemis[3]['img_url'] }}" alt="Card image cap">
-          <div class="card-body">
-          <p class="card-text">{{ m_data.hemis[3]['title'] }}</p>
-          </div>
-      </div>
-    </div>
-  
-  </div>
 
   </div>
   <footer class="footer" style="
@@ -104,4 +86,3 @@
 </body>
 
 </html>
-
